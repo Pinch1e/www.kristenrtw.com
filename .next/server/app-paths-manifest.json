@@ -1,0 +1,4 @@
+{
+  "/[countryCode]/(main)/page": "app/[countryCode]/(main)/page.js",
+  "/[countryCode]/(main)/store/page": "app/[countryCode]/(main)/store/page.js"
+}

@@ -1,0 +1,3 @@
+{
+  "/[countryCode]/(main)/categories/[...category]/page": "app/[countryCode]/(main)/categories/[...category]/page.js"
+}

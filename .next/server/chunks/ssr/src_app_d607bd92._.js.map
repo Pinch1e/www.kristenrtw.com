@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 8, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/EmmanuelArihilam/Downloads/try/my-ecommerce-store/src/app/twitter-image.jpg.mjs%20%28structured%20image%20object%29"],"sourcesContent":["import src from \"IMAGE\";\nexport default { src, width: 1600, height: 900 }\n"],"names":[],"mappings":";;;AAAA;;uCACe;IAAE,KAAA,uHAAA,CAAA,UAAG;IAAE,OAAO;IAAM,QAAQ;AAAI","debugId":null}}]
+}

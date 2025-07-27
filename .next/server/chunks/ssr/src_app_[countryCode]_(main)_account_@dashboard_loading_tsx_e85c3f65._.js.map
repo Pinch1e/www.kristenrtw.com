@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 5, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/EmmanuelArihilam/Downloads/try/my-ecommerce-store/src/app/%5BcountryCode%5D/%28main%29/account/%40dashboard/loading.tsx"],"sourcesContent":["import Spinner from \"@modules/common/icons/spinner\"\r\n\r\nexport default function Loading() {\r\n  return (\r\n    <div className=\"flex items-center justify-center w-full h-full text-ui-fg-base\">\r\n      <Spinner size={36} />\r\n    </div>\r\n  )\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;;AAEe,SAAS;IACtB,qBACE,8OAAC;QAAI,WAAU;kBACb,cAAA,8OAAC,6IAAA,CAAA,UAAO;YAAC,MAAM;;;;;;;;;;;AAGrB","debugId":null}}]
+}
