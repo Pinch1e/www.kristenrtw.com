@@ -20,19 +20,18 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
   const toggleState = useToggleState()
 
   return (
-    <div className="relative inline-block text-left">
+<div className="relative flex items-center">
       <Popover className="relative">
         {({ open }) => (
           <>
-            <Popover.Button
-              data-testid="nav-menu-button"
-              className={clx(
-                "text-base font-medium text-ui-fg-base hover:text-ui-fg-muted focus:outline-none",
-                open && "text-ui-fg-muted"
-              )}
-            >
-              Menu
-            </Popover.Button>
+<Popover.Button
+  data-testid="nav-menu-button"
+  className={clx(
+    "text-base font-medium text-ui-fg-base hover:text-[#D4AF37] focus:outline-none h-full flex items-center leading-[4rem] py-0"
+  )}
+>
+  Menu
+</Popover.Button>
 
             <Transition
               as={Fragment}
@@ -49,13 +48,13 @@ const SideMenu = ({ regions }: { regions: HttpTypes.StoreRegion[] | null }) => {
                 <ul className="flex flex-col gap-3">
                   {Object.entries(SideMenuItems).map(([name, href]) => (
                     <li key={name}>
-                      <LocalizedClientLink
-                        href={href}
-                        className="block text-sm text-ui-fg-base hover:text-ui-fg-muted transition-colors"
-                        data-testid={`${name.toLowerCase()}-link`}
-                      >
-                        {name}
-                      </LocalizedClientLink>
+<LocalizedClientLink
+  href={href}
+  className="block text-sm text-ui-fg-base hover:text-[#D4AF37] transition-colors"
+  data-testid={`${name.toLowerCase()}-link`}
+>
+  {name}
+</LocalizedClientLink>
                     </li>
                   ))}
                 </ul>

@@ -19,13 +19,24 @@
     scrollbar-width: none; /* Firefox */
   }
 
-  input:focus ~ label,
-  input:not(:placeholder-shown) ~ label {
-    @apply -translate-y-2 text-xsmall-regular;
+  /* New label styles using peer variants */
+  label {
+    transition-property: all;
+    transition-duration: 300ms;
+    top: 0.75rem; /* 3 */
+    position: absolute;
+    left: 0.75rem; /* 3 */
+    transform-origin: 0 0;
+    color: var(--ui-fg-subtle);
+    pointer-events: none;
   }
 
-  input:focus ~ label {
-    @apply left-0;
+  input.peer:focus + label,
+  input.peer:not(:placeholder-shown) + label {
+    transform: translateY(-0.5rem);
+    font-size: 0.75rem; /* text-xsmall-regular */
+    font-weight: 400; /* normal */
+    left: 0;
   }
 
   input:-webkit-autofill,
@@ -53,63 +64,117 @@
 
 @layer components {
   .content-container {
-    @apply max-w-[1440px] w-full mx-auto px-6;
+    max-width: 1440px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem; /* 6 */
+    padding-right: 1.5rem; /* 6 */
   }
 
   .contrast-btn {
-    @apply px-4 py-2 border border-black rounded-full hover:bg-black hover:text-white transition-colors duration-200 ease-in;
+    padding-left: 1rem; /* 4 */
+    padding-right: 1rem; /* 4 */
+    padding-top: 0.5rem; /* 2 */
+    padding-bottom: 0.5rem; /* 2 */
+    border-width: 1px;
+    border-color: black;
+    border-radius: 9999px;
+    transition-property: background-color, color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in;
+  }
+
+  .contrast-btn:hover {
+    background-color: black;
+    color: white;
+  }
+
+  a:hover, button:hover {
+    color: #D4AF37;
   }
 
   .text-xsmall-regular {
-    @apply text-[10px] leading-4 font-normal;
+    font-size: 10px;
+    line-height: 1rem; /* 4 */
+    font-weight: 400;
   }
 
   .text-small-regular {
-    @apply text-xs leading-5 font-normal;
+    font-size: 0.75rem; /* 12px */
+    line-height: 1.25rem; /* 5 */
+    font-weight: 400;
   }
 
   .text-small-semi {
-    @apply text-xs leading-5 font-semibold;
+    font-size: 0.75rem; /* 12px */
+    line-height: 1.25rem; /* 5 */
+    font-weight: 600;
   }
 
   .text-base-regular {
-    @apply text-sm leading-6 font-normal;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5rem; /* 6 */
+    font-weight: 400;
   }
 
   .text-base-semi {
-    @apply text-sm leading-6 font-semibold;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5rem; /* 6 */
+    font-weight: 600;
   }
 
   .text-large-regular {
-    @apply text-base leading-6 font-normal;
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 6 */
+    font-weight: 400;
   }
 
   .text-large-semi {
-    @apply text-base leading-6 font-semibold;
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 6 */
+    font-weight: 600;
   }
 
   .text-xl-regular {
-    @apply text-2xl leading-[36px] font-normal;
+    font-size: 1.5rem; /* 24px */
+    line-height: 2.25rem; /* 36px */
+    font-weight: 400;
   }
 
   .text-xl-semi {
-    @apply text-2xl leading-[36px] font-semibold;
+    font-size: 1.5rem; /* 24px */
+    line-height: 2.25rem; /* 36px */
+    font-weight: 600;
   }
 
   .text-2xl-regular {
-    @apply text-[30px] leading-[48px] font-normal;
+    font-size: 1.875rem; /* 30px */
+    line-height: 3rem; /* 48px */
+    font-weight: 400;
   }
 
   .text-2xl-semi {
-    @apply text-[30px] leading-[48px] font-semibold;
+    font-size: 1.875rem; /* 30px */
+    line-height: 3rem; /* 48px */
+    font-weight: 600;
   }
 
   .text-3xl-regular {
-    @apply text-[32px] leading-[44px] font-normal;
+    font-size: 2rem; /* 32px */
+    line-height: 2.75rem; /* 44px */
+    font-weight: 400;
   }
 
   .text-3xl-semi {
-    @apply text-[32px] leading-[44px] font-semibold;
+    font-size: 2rem; /* 32px */
+    line-height: 2.75rem; /* 44px */
+    font-weight: 600;
+  }
+
+  /* Center all h1 headings */
+  h1 {
+    text-align: center;
   }
 }
 

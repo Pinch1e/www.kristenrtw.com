@@ -1,6 +1,7 @@
 import { listCategories } from "@lib/data/categories"
 import { listCollections } from "@lib/data/collections"
 import { Text, clx } from "@medusajs/ui"
+import { SiTiktok } from "react-icons/si"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import MedusaCTA from "@modules/layout/components/medusa-cta"
@@ -90,9 +91,7 @@ export default async function Footer() {
                     aria-label="TikTok"
                     className="text-black hover:text-gray-600 transition"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" className="w-6 h-6">
-                      <path d="M9 3v12a3 3 0 003 3 3 3 0 003-3V7h3a6 6 0 01-6-6H9z"/>
-                    </svg>
+                    <SiTiktok className="w-6 h-6" />
                   </a>
                 </li>
                 <li>

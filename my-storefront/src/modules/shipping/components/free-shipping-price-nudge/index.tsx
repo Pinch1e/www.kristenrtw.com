@@ -94,9 +94,6 @@ export default function ShippingPriceNudge({
         return
       }
 
-      // Get all prices that are:
-      // 1. Currency code is same as the cart's
-      // 2. Have a rule that is set on item_total
       const validCurrencyPrices = shippingOption.prices.filter(
         (price) =>
           price.currency_code === cart.currency_code &&
