@@ -53,9 +53,7 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$path__$5b$external
 ;
 ;
 const configPath = __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$path__$5b$external$5d$__$28$node$3a$path$2c$__cjs$29$__["default"].join(process.cwd(), "./postcss.config.js");
-// Absolute paths don't work with ESM imports on Windows:
-// https://github.com/nodejs/node/issues/31710
-// convert it to a file:// URL, which works on all platforms
+
 const configUrl = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$node$3a$url__$5b$external$5d$__$28$node$3a$url$2c$__cjs$29$__["pathToFileURL"])(configPath).toString();
 const mod = await __turbopack_context__.y(configUrl);
 const __TURBOPACK__default__export__ = mod.default ?? mod;
@@ -90,7 +88,7 @@ const readEnvVars = new Set();
 process.env = new Proxy(originalEnv, {
     get (target, prop) {
         if (typeof prop === 'string') {
-            // We register the env var as dependency on the
+            // I register the env var as dependency on the
             // current transform and all future transforms
             // since the env var might be cached in module scope
             // and influence them all
